@@ -3,7 +3,6 @@
     public enum QueryOperand
     {
         And,
-        Or,
-        Not
+        Or
     }
 }

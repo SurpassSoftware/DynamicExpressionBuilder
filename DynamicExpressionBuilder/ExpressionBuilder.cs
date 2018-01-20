@@ -39,11 +39,6 @@ namespace DynamicExpressionBuilder
                             var tempExp = GetExpression<T>(param, filter);
                             exp = Expression.And(exp, tempExp);
                         }
-                        else if (filter.Operand == QueryOperand.Not)
-                        {
-                            var tempExp = GetExpression<T>(param, filter);
-                            exp = Expression.NotEqual(exp, tempExp);
-                        }
                         else //Default OR
                         {
                             var tempExp = GetExpression<T>(param, filter);
