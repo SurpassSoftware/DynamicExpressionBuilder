@@ -7,6 +7,10 @@ using System.Reflection;
 
 namespace DynamicExpressionBuilder
 {
+
+    /// <summary>
+    /// Expression Builder
+    /// </summary>
     public static class ExpressionBuilder
     {
         private static MethodInfo containsMethod = typeof(string).GetMethod("Contains");
@@ -15,7 +19,12 @@ namespace DynamicExpressionBuilder
         private static MethodInfo endsWithMethod = typeof(string).GetMethod("EndsWith", new Type[] { typeof(string) });
         private static MethodInfo compareMethod = typeof(string).GetMethod("Compare", new Type[] { typeof(string), typeof(string), typeof(StringComparison) });
 
-
+        /// <summary>
+        /// Convert expression input to expression
+        /// </summary>
+        /// <typeparam name="T">Type</typeparam>
+        /// <param name="filters">Expression input filters</param>
+        /// <returns></returns>
         public static Expression<Func<T, bool>> GetExpression<T>(IList<ExpressionInput> filters)
         {
             if (filters.Count == 0)
