@@ -26,7 +26,7 @@ namespace ExpressionBuilderExample.Helpers
                 },
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.And,
+                    Operand = QueryOperand.Or,
                     Operation = Operation.NotEquals,
                     PropertyName = "CrimeRecord",
                     Value = false
