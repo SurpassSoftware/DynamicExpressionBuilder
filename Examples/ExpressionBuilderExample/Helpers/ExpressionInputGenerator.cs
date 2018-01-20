@@ -30,6 +30,13 @@ namespace ExpressionBuilderExample.Helpers
                     Operation = Operation.NotEquals,
                     PropertyName = "CrimeRecord",
                     Value = false
+                },
+                new ExpressionInput
+                {
+                    Operand = QueryOperand.And,
+                    Operation = Operation.GreaterThanOrEqual,
+                    PropertyName = "AnnualIncome",
+                    Value = (double)500000 //Value need to be parsed to Expression's object (T) type. Here T is of Citizen type and AnnualIncome is of double type.
                 }
             };
         }

@@ -14,13 +14,15 @@ namespace ExpressionBuilderExample.Helpers
                 {
                     CrimeRecord = true,
                     Name = "Janak",
-                    State = "CA"
+                    State = "CA",
+                    AnnualIncome = 100000
                 },
                 new Citizen
                 {
                     CrimeRecord = true,
                     Name = "Jack",
-                    State = "FL"
+                    State = "FL",
+                    AnnualIncome = 50000
                 }
             };
         }

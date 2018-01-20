@@ -7,5 +7,7 @@
         public string State { get; set; }
 
         public bool CrimeRecord { get; set; }
+
+        public double AnnualIncome { get; set; }
     }
 }
