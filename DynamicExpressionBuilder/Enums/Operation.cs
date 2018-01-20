@@ -3,6 +3,7 @@
     public enum Operation
     {
         Equals,
+        NotEquals,
         GreaterThan,
         LessThan,
         GreaterThanOrEqual,

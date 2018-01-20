@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicExpressionBuilder", "DynamicExpressionBuilder\DynamicExpressionBuilder.csproj", "{1BDDEECC-6206-49F1-885F-98B214842DE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicExpressionBuilder", "DynamicExpressionBuilder\DynamicExpressionBuilder.csproj", "{1BDDEECC-6206-49F1-885F-98B214842DE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{5C901214-C6C8-4FC5-B548-83B0654FB6E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionBuilderExample", "Examples\ExpressionBuilderExample\ExpressionBuilderExample.csproj", "{78CE8BC5-9122-4A66-91A3-BA4285487A0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{1BDDEECC-6206-49F1-885F-98B214842DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BDDEECC-6206-49F1-885F-98B214842DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BDDEECC-6206-49F1-885F-98B214842DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CE8BC5-9122-4A66-91A3-BA4285487A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CE8BC5-9122-4A66-91A3-BA4285487A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CE8BC5-9122-4A66-91A3-BA4285487A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CE8BC5-9122-4A66-91A3-BA4285487A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78CE8BC5-9122-4A66-91A3-BA4285487A0E} = {5C901214-C6C8-4FC5-B548-83B0654FB6E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {70ABC01E-C610-43A9-84BC-A6CDF45A05FC}

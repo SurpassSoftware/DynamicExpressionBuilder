@@ -37,7 +37,7 @@ namespace DynamicExpressionBuilder
                         if (filter.Operand == QueryOperand.And)
                         {
                             var tempExp = GetExpression<T>(param, filter);
-                            exp = Expression.AndAlso(exp, tempExp);
+                            exp = Expression.And(exp, tempExp);
                         }
                         else if (filter.Operand == QueryOperand.Not)
                         {
@@ -68,6 +68,9 @@ namespace DynamicExpressionBuilder
                 {
                     case Operation.Equals:
                         return Expression.Equal(member, constant);
+
+                    case Operation.NotEquals:
+                        return Expression.NotEqual(member, constant);
 
                     case Operation.GreaterThan:
                         return Expression.GreaterThan(member, constant);
