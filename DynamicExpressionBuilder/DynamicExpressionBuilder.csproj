@@ -9,6 +9,9 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright 2018 (c) Surpass Software LLC. All rights reserved.</Copyright>
     <PackageTags>Expression Expression-Builder Csharp-Dynamic-Expression-Builder</PackageTags>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
