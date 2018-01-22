@@ -14,6 +14,11 @@
         /// <summary>
         /// Equiavlent to ||
         /// </summary>
-        Or
+        Or,
+
+        /// <summary>
+        /// Not should be equivalent to &amp;&amp; but operation should be use Operation.NotEquals
+        /// </summary>
+        Not
     }
 }
