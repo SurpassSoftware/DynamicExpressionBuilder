@@ -53,6 +53,11 @@
         /// </summary>
         ContainsWithToLower,
 
+        /// <summary>
+        /// Linq Equivalent to ToString().Contains("")
+        /// </summary>
+        ToStringWithContains,
+
 
         /// <summary>
         /// Linq Equivalent to .StartsWith("")
