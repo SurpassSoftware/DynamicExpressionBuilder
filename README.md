@@ -12,6 +12,7 @@ public enum Operation
         LessThanOrEqual,
         Contains,
         ContainsWithToLower,
+        ToStringWithContains,
         StartsWith,
         EndsWith,
         StringEquals
