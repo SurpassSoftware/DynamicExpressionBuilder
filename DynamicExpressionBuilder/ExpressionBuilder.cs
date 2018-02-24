@@ -15,7 +15,7 @@ namespace DynamicExpressionBuilder
     {
         private static MethodInfo containsMethod = typeof(string).GetMethod("Contains");
         private static MethodInfo toLowerMethod = typeof(string).GetMethod("ToLower", new Type[0]);
-        private static MethodInfo toStringMethod = typeof(string).GetMethod("ToString", new Type[0]);
+        private static MethodInfo toStringMethod = typeof(int).GetMethod("ToString", new Type[0]);
         private static MethodInfo startsWithMethod = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string) });
         private static MethodInfo endsWithMethod = typeof(string).GetMethod("EndsWith", new Type[] { typeof(string) });
         private static MethodInfo compareMethod = typeof(string).GetMethod("Compare", new Type[] { typeof(string), typeof(string), typeof(StringComparison) });
