@@ -21,10 +21,10 @@ namespace DynamicExpressionBuilder.Helpers
         /// <param name="value">Value to operate with</param>
         /// <param name="operand">Operand. And, Or, Not</param>
         /// <returns></returns>
-        public static ExpressionInput GetExpressionInput(string propertyName, Operation operation, object value, QueryOperand operand)
+        public static ExpressionInput GetExpressionInput(string propertyName, Operation operation, object value, Operand operand)
         {
-            if (operand == QueryOperand.Not)
-                return new ExpressionInput { Value = value, Operand = QueryOperand.And, Operation = Operation.NotEquals, PropertyName = propertyName };
+            if (operand == Operand.Not)
+                return new ExpressionInput { Value = value, Operand = Operand.And, Operation = Operation.NotEquals, PropertyName = propertyName };
             else
                 return new ExpressionInput { Value = value, Operand = operand, Operation = operation, PropertyName = propertyName };
 

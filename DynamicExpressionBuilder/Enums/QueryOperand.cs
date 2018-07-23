@@ -4,7 +4,7 @@
     /// <summary>
     /// Expression query operands
     /// </summary>
-    public enum QueryOperand
+    public enum Operand
     {
         /// <summary>
         /// Equiavlent to &amp;&amp;

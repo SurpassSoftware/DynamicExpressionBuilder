@@ -28,6 +28,6 @@ namespace DynamicExpressionBuilder.Models
         /// <summary>
         /// Expression operand
         /// </summary>
-        public QueryOperand Operand { get; set; }
+        public Operand Operand { get; set; }
     }
 }

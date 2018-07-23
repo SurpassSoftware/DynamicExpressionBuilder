@@ -45,7 +45,7 @@ namespace DynamicExpressionBuilder
                         exp = GetExpression<T>(param, filter);
                     else
                     {
-                        if (filter.Operand == QueryOperand.And)
+                        if (filter.Operand == Operand.And)
                         {
                             var tempExp = GetExpression<T>(param, filter);
                             exp = Expression.AndAlso(exp, tempExp);
