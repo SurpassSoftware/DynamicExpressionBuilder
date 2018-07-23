@@ -12,28 +12,28 @@ namespace ExpressionBuilderExample.Helpers
             {
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.And, //First Item does not matter And or OR
+                    Operand = Operand.And, //First Item does not matter And or OR
                     Operation = Operation.Contains,
                     PropertyName = "Name",
                     Value = "Jack"
                 },
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.And,
+                    Operand = Operand.And,
                     Operation = Operation.StringEquals, //Operation.Equals
                     PropertyName = "State",
                     Value = "FL"
                 },
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.Or,
+                    Operand = Operand.Or,
                     Operation = Operation.NotEquals,
                     PropertyName = "CrimeRecord",
                     Value = false
                 },
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.And,
+                    Operand = Operand.And,
                     Operation = Operation.GreaterThanOrEqual,
                     PropertyName = "AnnualIncome",
                     Value = (double)500000 //Value need to be parsed to Expression's object (T) type. Here T is of Citizen type and AnnualIncome is of double type.
