@@ -13,12 +13,13 @@ namespace DynamicExpressionBuilder
     /// </summary>
     public static class ExpressionBuilder
     {
-        private static MethodInfo containsMethod = typeof(string).GetMethod("Contains");
-        private static MethodInfo toLowerMethod = typeof(string).GetMethod("ToLower", new Type[0]);
-        private static MethodInfo toStringMethod = typeof(int).GetMethod("ToString", new Type[0]);
-        private static MethodInfo startsWithMethod = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string) });
-        private static MethodInfo endsWithMethod = typeof(string).GetMethod("EndsWith", new Type[] { typeof(string) });
-        private static MethodInfo compareMethod = typeof(string).GetMethod("Compare", new Type[] { typeof(string), typeof(string), typeof(StringComparison) });
+
+        private static readonly MethodInfo containsMethod = typeof(string).GetMethod("Contains", new Type[] { typeof(string) });
+        private static readonly MethodInfo toLowerMethod = typeof(string).GetMethod("ToLower", new Type[0]);
+        private static readonly MethodInfo toStringMethod = typeof(int).GetMethod("ToString", new Type[0]);
+        private static readonly MethodInfo startsWithMethod = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string) });
+        private static readonly MethodInfo endsWithMethod = typeof(string).GetMethod("EndsWith", new Type[] { typeof(string) });
+        private static readonly MethodInfo compareMethod = typeof(string).GetMethod("Compare", new Type[] { typeof(string), typeof(string), typeof(StringComparison) });
 
         /// <summary>
         /// Convert expression input to expression
@@ -90,7 +91,7 @@ namespace DynamicExpressionBuilder
                         return Expression.LessThanOrEqual(member, constant);
 
                     case Operation.Contains:
-                        return Expression.Call(member, containsMethod, constant);
+                        return Expression.Call(member, containsMethod, new[] { constant });
 
                     case Operation.ContainsWithToLower:
                         var toLowerMember = Expression.Call(member, toLowerMethod);
