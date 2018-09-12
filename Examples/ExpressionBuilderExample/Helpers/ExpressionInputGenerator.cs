@@ -34,9 +34,9 @@ namespace ExpressionBuilderExample.Helpers
                 new ExpressionInput
                 {
                     Operand = Operand.And,
-                    Operation = Operation.GreaterThanOrEqual,
+                    Operation = Operation.LongEquals,
                     PropertyName = "AnnualIncome",
-                    Value = (double)500000 //Value need to be parsed to Expression's object (T) type. Here T is of Citizen type and AnnualIncome is of double type.
+                    Value = (long)50000 //Value need to be parsed to Expression's object (T) type. Here T is of Citizen type and AnnualIncome is of double type.
                 }
             };
         }

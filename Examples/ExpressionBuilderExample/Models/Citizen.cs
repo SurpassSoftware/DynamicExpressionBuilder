@@ -8,6 +8,6 @@
 
         public bool CrimeRecord { get; set; }
 
-        public double AnnualIncome { get; set; }
+        public long AnnualIncome { get; set; }
     }
 }

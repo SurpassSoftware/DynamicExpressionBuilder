@@ -7,9 +7,14 @@
     {
 
         /// <summary>
-        /// Linq Equivalent to ==
+        /// Linq Equivalent to == (for string)
         /// </summary>
         Equals,
+
+        /// <summary>
+        /// Linq Equivalent to LongType.Equals(anotherLongType)
+        /// </summary>
+        LongEquals,
 
 
         /// <summary>
