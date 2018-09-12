@@ -5,6 +5,7 @@ Currently supports these operations:
 public enum Operation
     {
         Equals,
+        LongEquals,
         NotEquals,
         GreaterThan,
         LessThan,
