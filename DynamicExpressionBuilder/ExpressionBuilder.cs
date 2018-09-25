@@ -13,8 +13,6 @@ namespace DynamicExpressionBuilder
     /// </summary>
     public static class ExpressionBuilder
     {
-        private static readonly MethodInfo longEqualsMethod = typeof(long).GetMethod("Equals", new Type[] { typeof(long) });
-        private static readonly MethodInfo equalsMethod = typeof(string).GetMethod("Equals", new Type[] { typeof(string) });
         private static readonly MethodInfo containsMethod = typeof(string).GetMethod("Contains", new Type[] { typeof(string) });
         private static readonly MethodInfo toLowerMethod = typeof(string).GetMethod("ToLower", new Type[0]);
         private static readonly MethodInfo toStringMethod = typeof(int).GetMethod("ToString", new Type[0]);
@@ -71,13 +69,13 @@ namespace DynamicExpressionBuilder
                 ConstantExpression constant = Expression.Constant(filter.Value);
                 ConstantExpression stringComparisonConstant = Expression.Constant(StringComparison.OrdinalIgnoreCase);
 
+                Type filterType = filter.Value.GetType();
+                MethodInfo equalFilterMethod = filterType.GetMethod("Equals", new Type[] { filterType }); //Generic Equals methodInfo
+
                 switch (filter.Operation)
                 {
                     case Operation.Equals:
-                        return Expression.Call(member, equalsMethod, constant);
-
-                    case Operation.LongEquals:
-                        return Expression.Call(member, longEqualsMethod, constant);
+                        return Expression.Call(member, equalFilterMethod, constant);
 
                     case Operation.NotEquals:
                         return Expression.NotEqual(member, constant);

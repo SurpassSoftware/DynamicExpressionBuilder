@@ -12,6 +12,7 @@ namespace ExpressionBuilderExample.Helpers
             {
                 new Citizen
                 {
+                    Id = 1,
                     CrimeRecord = true,
                     Name = "Janak",
                     State = "CA",
@@ -19,6 +20,7 @@ namespace ExpressionBuilderExample.Helpers
                 },
                 new Citizen
                 {
+                    Id = 2,
                     CrimeRecord = true,
                     Name = "Jack",
                     State = "FL",

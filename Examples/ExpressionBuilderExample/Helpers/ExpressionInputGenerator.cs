@@ -20,21 +20,28 @@ namespace ExpressionBuilderExample.Helpers
                 new ExpressionInput
                 {
                     Operand = Operand.And,
-                    Operation = Operation.StringEquals, //Operation.Equals
+                    Operation = Operation.Equals,
+                    PropertyName = "Id",
+                    Value = 1
+                },
+                new ExpressionInput
+                {
+                    Operand = Operand.And,
+                    Operation = Operation.Equals,
                     PropertyName = "State",
                     Value = "FL"
                 },
                 new ExpressionInput
                 {
                     Operand = Operand.Or,
-                    Operation = Operation.NotEquals,
+                    Operation = Operation.Equals,
                     PropertyName = "CrimeRecord",
                     Value = false
                 },
                 new ExpressionInput
                 {
                     Operand = Operand.And,
-                    Operation = Operation.LongEquals,
+                    Operation = Operation.Equals,
                     PropertyName = "AnnualIncome",
                     Value = (long)50000 //Value need to be parsed to Expression's object (T) type. Here T is of Citizen type and AnnualIncome is of double type.
                 }
