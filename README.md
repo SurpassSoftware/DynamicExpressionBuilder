@@ -5,7 +5,6 @@ Currently supports these operations:
 public enum Operation
     {
         Equals,
-        LongEquals,
         NotEquals,
         GreaterThan,
         LessThan,
@@ -30,31 +29,38 @@ public static IList<ExpressionInput> GetExpressionInputList()
             {
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.And, //First Item does not matter And or OR
+                    Operand = Operand.And, //First Item does not matter And or OR
                     Operation = Operation.Contains,
                     PropertyName = "Name",
                     Value = "Jack"
                 },
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.And,
-                    Operation = Operation.StringEquals, //Operation.Equals
+                    Operand = Operand.And,
+                    Operation = Operation.Equals,
+                    PropertyName = "Id",
+                    Value = 1
+                },
+                new ExpressionInput
+                {
+                    Operand = Operand.And,
+                    Operation = Operation.Equals,
                     PropertyName = "State",
                     Value = "FL"
                 },
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.Or,
-                    Operation = Operation.NotEquals,
+                    Operand = Operand.Or,
+                    Operation = Operation.Equals,
                     PropertyName = "CrimeRecord",
                     Value = false
                 },
                 new ExpressionInput
                 {
-                    Operand = QueryOperand.And,
-                    Operation = Operation.GreaterThanOrEqual,
+                    Operand = Operand.And,
+                    Operation = Operation.Equals,
                     PropertyName = "AnnualIncome",
-                    Value = (double)500000 //Value need to be parsed to Expression's object (T) type. Here T is of Citizen type and AnnualIncome is of double type.
+                    Value = (long)50000 //Value need to be parsed to Expression's object (T) type. Here T is of Citizen type and AnnualIncome is of double type.
                 }
             };
         }
@@ -66,7 +72,7 @@ public static IList<ExpressionInput> GetExpressionInputList()
             var expression = DynamicExpressionBuilder.ExpressionBuilder.GetExpression<Citizen>(expressionList); //Passing to expression builder. Here we are getting expression of Type Citizen
             Console.WriteLine($"Final Expression = {expression.ToString()}");
 ```
-Output: `Final Expression = t => (((t.Name.Contains("Jack") AndAlso (Compare(t.State, "FL", OrdinalIgnoreCase) == 0)) Or (t.CrimeRecord != False)) AndAlso (t.AnnualIncome >= 500000))`
+Output: `Final Expression = t => ((((t.Name.Contains("Jack") AndAlso t.Id.Equals(1)) AndAlso t.State.Equals("FL")) Or t.CrimeRecord.Equals(False)) AndAlso t.AnnualIncome.Equals(50000))`
 + Using Final expression
 ```csharp
             var citizenRecords = CitizenRecordGenerator.GetCitizenRecordList();
