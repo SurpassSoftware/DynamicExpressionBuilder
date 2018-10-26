@@ -10,12 +10,7 @@
         /// Linq Equivalent to == (for string)
         /// </summary>
         Equals,
-
-        /// <summary>
-        /// Linq Equivalent to LongType.Equals(anotherLongType)
-        /// </summary>
-        LongEquals,
-
+        
 
         /// <summary>
         /// Linq Equivalent to !=
