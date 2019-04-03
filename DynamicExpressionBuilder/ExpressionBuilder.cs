@@ -16,7 +16,7 @@ namespace DynamicExpressionBuilder
         private static readonly MethodInfo containsMethod = typeof(string).GetMethod("Contains", new Type[] { typeof(string) });
         private static readonly MethodInfo toLowerMethod = typeof(string).GetMethod("ToLower", new Type[0]);
         private static readonly MethodInfo toStringMethod = typeof(int).GetMethod("ToString", new Type[0]);
-        private static readonly MethodInfo startsWithMethod = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string) });
+        private static readonly MethodInfo startsWithMethod = typeof(string).GetMethod("StartsWith", new Type[] { typeof(string), typeof(StringComparison) });
         private static readonly MethodInfo endsWithMethod = typeof(string).GetMethod("EndsWith", new Type[] { typeof(string) });
         private static readonly MethodInfo compareMethod = typeof(string).GetMethod("Compare", new Type[] { typeof(string), typeof(string), typeof(StringComparison) });
 
@@ -68,6 +68,7 @@ namespace DynamicExpressionBuilder
                 MemberExpression member = Expression.Property(param, filter.PropertyName);
                 ConstantExpression constant = Expression.Constant(filter.Value);
                 ConstantExpression stringComparisonConstant = Expression.Constant(StringComparison.OrdinalIgnoreCase);
+                ConstantExpression ignoreCase = Expression.Constant(StringComparison.InvariantCultureIgnoreCase);
 
                 Type filterType = filter.Value.GetType();
                 MethodInfo equalFilterMethod = filterType.GetMethod("Equals", new Type[] { filterType }); //Generic Equals methodInfo
@@ -104,7 +105,7 @@ namespace DynamicExpressionBuilder
                         return Expression.Call(tostringMember, containsMethod, constant);
 
                     case Operation.StartsWith:
-                        return Expression.Call(member, startsWithMethod, constant);
+                        return Expression.Call(member, startsWithMethod, constant, ignoreCase);
 
                     case Operation.EndsWith:
                         return Expression.Call(member, endsWithMethod, constant);

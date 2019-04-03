@@ -13,7 +13,7 @@ namespace ExpressionBuilderExample.Helpers
                 new ExpressionInput
                 {
                     Operand = Operand.And, //First Item does not matter And or OR
-                    Operation = Operation.Contains,
+                    Operation = Operation.StartsWith,
                     PropertyName = "Name",
                     Value = "Jack"
                 },
