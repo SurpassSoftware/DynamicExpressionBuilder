@@ -15,6 +15,8 @@ public enum Operation
         ToStringWithContains,
         StartsWith,
         EndsWith,
+        StartsWithToLower,
+        EndsWithToLower,
         StringEquals
     }
 ```
