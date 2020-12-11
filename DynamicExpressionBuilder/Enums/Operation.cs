@@ -70,6 +70,16 @@
         EndsWith,
 
         /// <summary>
+        /// Linq Equivalent to .ToLower().StartsWith("")
+        /// </summary>
+        StartsWithToLower,
+
+        /// <summary>
+        /// Linq Equivalent to .ToLower().EndsWith("")
+        /// </summary>
+        EndsWithToLower,
+
+        /// <summary>
         /// Equivalent to .Compare(Property, PropertyInstring, OrdinalIgnoreCase) == 0
         /// </summary>
         StringEquals

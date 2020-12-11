@@ -110,6 +110,14 @@ namespace DynamicExpressionBuilder
                     case Operation.EndsWith:
                         return Expression.Call(member, endsWithMethod, constant);
 
+                    case Operation.StartsWithToLower:
+                        var startsWithToLowerMember = Expression.Call(member, toLowerMethod);
+                        return Expression.Call(startsWithToLowerMember, startsWithMethod, constant);
+
+                    case Operation.EndsWithToLower:
+                        var endsWithToLowerMember = Expression.Call(member, toLowerMethod);
+                        return Expression.Call(endsWithToLowerMember, endsWithMethod, constant);
+
                     case Operation.StringEquals:
                         var zeroConstant = Expression.Constant(0);
                         var compareExpression = Expression.Call(compareMethod, member, constant, stringComparisonConstant);
