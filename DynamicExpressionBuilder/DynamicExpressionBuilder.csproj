@@ -1,27 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <PackageId>DynamicExpressionBuilder.Surpass</PackageId>
     <Authors>Surpass Software</Authors>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>Simple C# expression builder at run-time.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>Copyright 2018 (c) Surpass Software LLC. All rights reserved.</Copyright>
-    <PackageTags>Expression Expression-Builder Csharp-Dynamic-Expression-Builder</PackageTags>
-    <Version>1.0.10</Version>
-    <AssemblyVersion>1.0.0.10</AssemblyVersion>
-    <FileVersion>1.0.0.9</FileVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>Surpass Software LLC. All rights reserved.</Copyright>
+    <Version>1.0.11</Version>
+    <AssemblyVersion>1.0.0.11</AssemblyVersion>
+    <FileVersion>1.0.0.11</FileVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>Surpass Software LLC.</Company>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\DynamicExpressionBuilder.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\DynamicExpressionBuilder.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
